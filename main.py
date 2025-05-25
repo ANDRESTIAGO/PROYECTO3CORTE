@@ -20,6 +20,7 @@ app.include_router(home.router)
 
 templates = Jinja2Templates(directory="templates")
 
+
 '''@app.lifespan
 async def app_lifespan(app):
     await init_db()
