@@ -1,6 +1,6 @@
 from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from models import *
+from .models import *
 from datetime import datetime
 from typing import List, Optional
 
@@ -21,7 +21,7 @@ async def buscar_componente(tipo: str, modelo: str, session: AsyncSession) -> Op
     result = await session.exec(select(Componente).where(Componente.tipo == tipo, Componente.modelo == modelo))
     return result.first()
 
-async def actualizar_componente(id: int, datos: ComponenteActualizar, session: AsyncSession) -> Optional[Componente]:
+async def actualizar_componente(id: int, datos: ComponenteActualizado, session: AsyncSession) -> Optional[Componente]:
     componente = await session.get(Componente, id)
     if not componente:
         return None
@@ -58,7 +58,7 @@ async def buscar_distribuidor(nombre: str, session: AsyncSession) -> Optional[Di
     result = await session.exec(select(Distribuidores).where(Distribuidores.nombre == nombre))
     return result.first()
 
-async def actualizar_distribuidor(id: int, datos: DistribuidorActualizar, session: AsyncSession) -> Optional[Distribuidores]:
+async def actualizar_distribuidor(id: int, datos: DistriActualizado, session: AsyncSession) -> Optional[Distribuidores]:
     distribuidor = await session.get(Distribuidores, id)
     if not distribuidor:
         return None
