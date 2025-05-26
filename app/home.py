@@ -20,7 +20,7 @@ async def read_home(request: Request):
 
 @router.get("/info", response_class=HTMLResponse)
 async def read_info(request:Request):
-    #csv_file = "data/capacitaciones_mintic.csv"
+    csv_file = "capacitaciones_mintic.csv"
     sesiones = pd.read_csv(csv_file)
     sesiones["id"] = sesiones.index
     lista = sesiones.to_dict(orient="records")
@@ -57,7 +57,7 @@ def detalle_sesion(request: Request, id: int):
         html_content = """
                 <html>
                     <head>
-                        <title>sigmotoa</title>
+                        <title>ANDRESTIAGO</title>
                     </head>
                     <body>
                         <h1>Look ma! HTML!</h1>
@@ -85,7 +85,7 @@ async def pure_html():
     html_content = """
         <html>
             <head>
-                <title>sigmotoa</title>
+                <title>ANDRESTIAGO</title>
             </head>
             <body>
                 <h1>Look ma! HTML!</h1>
