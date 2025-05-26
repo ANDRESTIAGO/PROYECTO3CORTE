@@ -3,12 +3,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 
-from . import home
-from .models import ComponenteActualizado, Componente, ComponenteConId, DistriConId, DistriActualizado, Distribuidores
+from .routes import home
+from .modelos.models import ComponenteActualizado, Componente, ComponenteConId, DistriConId, DistriActualizado, Distribuidores
 
 from sqlalchemy import select
 #from .db import get_session, init_db
 from sqlalchemy.ext.asyncio import AsyncSession
+
+'''import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))'''
 
 app = FastAPI()
 
@@ -32,4 +37,3 @@ async def obtener_componentes(session: AsyncSession = Depends(get_session)):
     result = await session.execute(select(Componente))
     componentes = result.scalars().all()
     return [ComponenteConId.from_orm(comp) for comp in componentes]'''
-

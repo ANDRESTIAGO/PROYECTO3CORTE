@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, Form, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 import pandas as pd
-from .models import Sesion
+from ..modelos.models import *
 
 templates = Jinja2Templates(directory="templates")
 router = APIRouter()

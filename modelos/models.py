@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 from sqlmodel import SQLModel, Field
-class Sesion(BaseModel):
+class Sesion(SQLModel):
     tema:str
     fecha:str
     hora:str

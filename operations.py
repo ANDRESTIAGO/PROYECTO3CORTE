@@ -1,6 +1,6 @@
 from sqlmodel import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from .models import *
+from models.models import *
 from datetime import datetime
 from typing import List, Optional
 
