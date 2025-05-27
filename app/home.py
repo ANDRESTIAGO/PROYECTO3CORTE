@@ -34,16 +34,14 @@ async def show_form(request:Request):
 
 @router.post("/add")
 async def submit_info(
-        tema: str = Form(...),
-        fecha:str=Form(...),
-        hora:str=Form(...),
-        nombre_mentor:str=Form(...),
-        link:str=Form(...)
+        nombre: str = Form(...),
+        tipo:str=Form(...),
+        marca:str=Form(...),
+        modelo:str=Form(...),
 ):
-    sesion = Sesion(tema=tema, fecha=fecha, hora=hora, nombre_mentor=nombre_mentor, link=link)
-
+    sesion = Componente(nombre=nombre, tipo=tipo, marca=marca, modelo=modelo)
     df = pd.read_csv(csv_file)
-    df.loc[len(df)] = [sesion.tema, sesion.fecha, sesion.hora, sesion.nombre_mentor, sesion.link]
+    df.loc[len(df)] = [sesion.nombre, sesion.tipo, sesion.marca, sesion.modelo]
     df.to_csv(csv_file, index=True)
 
     return RedirectResponse(url="/info", status_code=303)

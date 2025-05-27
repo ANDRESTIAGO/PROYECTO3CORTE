@@ -15,12 +15,12 @@ class Distribuidores(SQLModel, table=True):
     direccion: str = Field(..., min_length=2, max_length=50)
 
 # Modelo base para componentes con mapeo SQL
-class Componente(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    nombre: str = Field(..., min_length=2, max_length=50)
-    tipo: str = Field(..., min_length=2, max_length=30)
-    marca: str = Field(..., min_length=2, max_length=30)
-    modelo: str = Field(..., min_length=2, max_length=30)
+class Componente(SQLModel):
+    #id: Optional[int] = Field(default=None, primary_key=True)
+    nombre: str
+    tipo: str
+    marca: str
+    modelo: str
 
 # Modelo para incluir ID en las respuestas de componentes
 class ComponenteConId(Componente):

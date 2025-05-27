@@ -11,21 +11,18 @@
 <table style="color: aqua">
 
     <tr>
-        <th>Tema</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-        <th>Mentor</th>
-        <th>Enlace</th>
+        <th>nombre</th>
+        <th>tipo</th>
+        <th>marca</th>
+        <th>modelo</th>
     </tr>
     <tbody>
-    {% for sesion in sesiones %}
+    {% for  sesion in sesiones %}
     <tr>
-        <td>{{ sesion.Tema }}</td>
-        <td>{{ sesion.Fecha }}</td>
-        <td>{{ sesion.Hora }}</td>
-        <td style="color: chocolate">  {{ sesion.Mentor }}</td>
-        <td> <a href="{{ sesion.Enlace }}">Ver Grabación</a></td>
-        <td><a href="/detail/{{ loop.index0 }}">Ver detalle</a></td>
+        <td>{{ sesion.nombre }}</td>
+        <td>{{ sesion.tipo }}</td>
+        <td>{{ sesion.marca }}</td>
+        <td style="color: chocolate">  {{ sesion.modelo }}</td>
 
     </tr>
     {% endfor %}
