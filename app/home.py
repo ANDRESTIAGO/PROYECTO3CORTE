@@ -35,9 +35,9 @@ async def show_form(request:Request):
 @router.post("/add")
 async def submit_info(
         nombre: str = Form(...),
-        tipo:str=Form(...),
-        marca:str=Form(...),
-        modelo:str=Form(...),
+        tipo:str = Form(...),
+        marca:str = Form(...),
+        modelo:str = Form(...)
 ):
     sesion = Componente(nombre=nombre, tipo=tipo, marca=marca, modelo=modelo)
     df = pd.read_csv(csv_file)
