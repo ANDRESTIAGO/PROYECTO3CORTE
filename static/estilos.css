@@ -12,9 +12,11 @@ h1 {
 }
 h2 {
     font-size: 2em;
+    font-family: 'Consul', sans-serif;
 }
 h3 {
     font-size: 1.5em;
+    font-family: 'Consul', sans-serif;
 }
 p {
     font-size: 1em;
@@ -30,6 +32,27 @@ body {
     margin: 0;
 }
 
+@font-face {
+    font-family: 'Consul';
+    src: url('../static/fonts/Consul.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DigitalGlitchDemo';
+    src: url('../static/fonts/DigitalGlitchDemo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheExtended';
+    src: url('../static/fonts/TheExtended.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 button {
     padding: 12px 20px;
     font-weight: bold;
@@ -38,11 +61,11 @@ button {
     border: 1px solid black;
     box-shadow: 2px 2px black;
     color: aliceblue;
-    background-color: rgb(89, 141, 67);
+    background-color: #ab7633;
 }
 
 button:hover {
-    background-color: rgb(50, 82, 37);
+    background-color: #744d1a;
 }
 
 .contenedor {
@@ -57,12 +80,13 @@ button:hover {
 header {
     background-color: rgb(236, 233, 233);
 }
-header .logo {
+header p.logo {
     margin: 0;
     padding: 25px 30px;
     font-weight: bold;
-    color: rgb(89, 141, 67);
+    color: 		#ab7633;
     font-size: 1.5em;
+    font-family: 'Consul', sans-serif;
 }
 
 header .contenedor {
@@ -70,11 +94,13 @@ header .contenedor {
     flex-direction: column;
     align-items: center;
 }
+
 header nav {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-bottom: 25px;
+    font-family: 'Consul', sans-serif;
 }
 header a {
     padding: 5px 12px;
@@ -84,7 +110,7 @@ header a {
     color: black;
 }
 header a:hover {
-    color: rgb(89, 141, 67);
+    color: 	#ab7633;
 }
 
 #hero {
@@ -106,7 +132,11 @@ header a:hover {
 }
 
 #hero h1 {
+    display: flex;
     color: white;
+    font-size: clamp(1.5rem, 6vw, 4.5rem);
+    font-family: 'DigitalGlitchDemo', sans-serif;
+    
 }
 
 #Lo-que-ofresemos .contenedor {
@@ -115,7 +145,7 @@ header a:hover {
 }
 
 #Como-ayudar {
-    background-color: rgb(30, 30, 30);
+    background-color: #4c2a20;
     color: white;
 }
 
@@ -138,6 +168,7 @@ header a:hover {
     padding: 45px;
     margin: 20px;
     border-radius: 15px;
+    flex: 1 1 300px
 }
 
 .carta:first-child {
@@ -145,21 +176,21 @@ header a:hover {
         0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url("{{ url_for('static', path='img/front-end.JPG') }}");
+    ), url("../static/img/comparacion.jpg");
 }
 .carta:nth-child(2) {
     background-image: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url("{{ url_for('static', path='img/camposeco.jpg') }}");
+    ), url("../static/img/compatibilidad.jpg");
 }
 .carta:nth-child(3) {
     background-image: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url("{{ url_for('static', path='img/coso-end.jpg') }}");
+    ), url("../static/img/listado.jpg");
 }
 #lo-mostrado {
     background-color: rgb(30, 30, 30);
@@ -237,11 +268,11 @@ footer .contenedor {
         margin-top: 0px;
     }
     #Lo-que-ofresemos .contenedor-imagen {
-        background-image: url("{{ url_for('static', path='img/preservar.jpg') }}");
+        background-image: url("../static/img/escudo.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
-        width: 400PX;
+        width: 520PX;
     }
     #lo-mostrado p {
         padding: 20px 120px;

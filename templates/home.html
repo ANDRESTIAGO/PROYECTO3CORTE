@@ -1,24 +1,74 @@
-{% extends 'base.html' %}
-{% block title %} Inicio - Visualizando {% endblock %}
+{% extends 'base.html' %} {% block title %} Inicio - Visualizando {% endblock %}
 {% block content %}
 
 <section id="hero">
-    <div class="hero">
-        <h1>Validacion entre compontentes</h1>
-        <h1>{{title}}</h1>
-        <ul>
-            <li>Primer elemento</li>
-            <li>Segundo elemento</li>
-        </ul>
-        </div>
- </section>
+  <div class="hero">
+    <h1>Fast Components</h1>
+    <h1>{{title}}</h1>
+  </div>
+</section>
 
-<img src="../static/img/cometa.jpg" width="300" height="500">
-<br>
-<a href="/info">Informacion
-<br>
-<a href="https://github.com/ANDRESTIAGO">Esto es un enlace</a>
+<section id="Lo-que-ofresemos">
+  <div class="contenedor">
+    <div class="contenedor-imagen"></div>
+    <div class="texto">
+      <h2>Nuestro objetivo</h2>
+      <!--<span class="color-acento">Climatico!</span></h2>-->
+      <p>
+        El objetivo de esta pagina, es brindarle seguridad y confianza a la hora
+        de armar su computadora de escritorio, la pagina le dara Informacion
+        necesaria para la compatibilidad entre los componentes escogidos
+      </p>
+    </div>
+  </div>
+</section>
 
+<section id="Como-ayudar">
+  <div class="contenedor">
+    <h2>Comparaciones</h2>
+    <div class="programas">
+      <div class="carta">
+        <h3>Caracteristicas</h3>
+        <p>
+          Comparacion entre Caracteristicasde dos componentes, este apartado es
+          util para saber que componente es mas potente que otro, de esta manera
+          podremos ajustar el presupuesto dependiendo de la necesidad
+        </p>
+        <form action="pagina1.html">
+          <button>Comparar</button>
+        </form>
+      </div>
+      <div class="carta">
+        <h3>Compatibilidad</h3>
+        <p>
+          Comparacion de compatibilidad entre los componentes, es necesario
+          saber si los componentes son compatibles entre si, por eso este
+          apartado te ayudara
+        </p>
+        <form action="pagina2.html">
+          <button>Comparar</button>
+        </form>
+      </div>
+      <div class="carta">
+        <h3>Listado de componentes</h3>
+        <p>
+          En este espacio se encuentra el listado de todos los componentes mas
+          adecuados para las computadoras
+        </p>
+        <form action="pagina3.html">
+          <button>Listado</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% endblock %}
+<img src="../static/img/cometa.jpg" width="300" height="500" />
+<br />
+<a href="/info"
+  >Informacion
+  <br />
+  <a href="https://github.com/ANDRESTIAGO">Esto es un enlace</a>
 
+  {% endblock %}
+</a>
