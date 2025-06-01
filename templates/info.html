@@ -1,34 +1,46 @@
 {% extends 'base.html' %}
 {% block title %} {{ titulo }} - Visualizando {% endblock %}
 {% block content %}
-<h3>Info de las sesiones</h3>
-
-<h6>Aqui tenemos mas info</h6>
-
-<a type="button" href="/"> Regresar</a> <br>
-<a type="button" href="/add"> Adicionar Sesión</a>
-
-<table style="color: aqua">
-
-    <tr>
-        <th>nombre</th>
-        <th>tipo</th>
-        <th>marca</th>
-        <th>modelo</th>
-    </tr>
-    <tbody>
-    {% for  sesion in sesiones %}
-    <tr>
-        <td>{{ sesion.nombre }}</td>
-        <td>{{ sesion.tipo }}</td>
-        <td>{{ sesion.marca }}</td>
-        <td style="color: chocolate">  {{ sesion.modelo }}</td>
-
-    </tr>
-    {% endfor %}
-    </tbody>
+<section id="hero">
+        <div class="hero">
+           
+            <h1 style="font-size: clamp(1rem, 4.5vw, 3.5rem);">Comparacion entre componentes</h1>
+            <h3>Aqui compararás dos componentes que tu elijas</h3>
+            
+        </div>
+    </section>
 
 
-</table>
 
+<section id="Lo-que-ofresemos">
+        <div class="contenedor">
+            <div class="texto">
+        <a type="button" href="/"> Regresar</a> <br>
+        <a type="button" href="/add"> Adicionar componente</a>
+        <table style="color: aqua">
+
+    
+                <tr>
+                    <th>nombre</th>
+                    <th>tipo</th>
+                    <th>marca</th>
+                    <th>modelo</th>
+                </tr>
+                <tbody>
+                {% for  sesion in sesiones %}
+                <tr>
+                    <td>{{ sesion.nombre }}</td>
+                    <td>{{ sesion.tipo }}</td>
+                    <td>{{ sesion.marca }}</td>
+                    <td style="color: chocolate">  {{ sesion.modelo }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+            
+
+        </table>
+</div>
+        </div>
+    </section>
 {% endblock %}
