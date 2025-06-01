@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section id="Lo-que-ofresemos">
+        <div class="contenedor">
+            <div class="texto">
 <h2>Crear nuevo evento</h2>
 <form method="post" action="/add">
     <label>nombre: <input type="text" name="Nombre" required> </label> <br>
@@ -11,4 +14,7 @@
     <button type="submit">Crear evento</button>
 
 </form>
+        </div>
+     </div>
+</section>
 {% endblock %}
