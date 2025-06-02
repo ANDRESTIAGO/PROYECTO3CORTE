@@ -16,10 +16,8 @@
         <div class="contenedor">
             <div class="texto">
         <a type="button" href="/"> Regresar</a> <br>
-        <a type="button" href="/comparacion"> Adicionar componente</a>
+        <a type="button" href="/add"> Adicionar componente</a>
         <table style="color: aqua">
-
-    
                 <tr>
                     <th>nombre</th>
                     <th>tipo</th>
@@ -27,7 +25,7 @@
                     <th>modelo</th>
                 </tr>
                 <tbody>
-                {% for  sesion in sesiones %}
+            {% for  sesion in sesiones %}
                 <tr>
                     <td>{{ sesion.nombre }}</td>
                     <td>{{ sesion.tipo }}</td>
@@ -40,7 +38,7 @@
             
 
         </table>
-            </div>
+</div>
         </div>
     </section>
 {% endblock %}
