@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ titulo }} - Comparación {% endblock %}
+
+{% block content %}
+<section id="hero">
+    <div class="hero">
+        <h1 class="hero-title">Comparación entre componentes</h1>
+        <h3 class="hero-subtitle">Aquí compararás dos componentes que tú elijas</h3>
+    </div>
+</section>
+
+<section id="comparison-section">
+    <div class="cards-container">
+        {% for sesion in sesiones %}
+        <div class="card">
+            <img src="{{ sesion.imagen_url }}" alt="Imagen del componente" class="card-image">
+            <div class="card-content">
+                <h2 class="card-title">{{ sesion.nombre }}</h2>
+                <p class="card-detail"><strong>Tipo:</strong> {{ sesion.tipo }}</p>
+                <p class="card-detail"><strong>Marca:</strong> {{ sesion.marca }}</p>
+                <p class="card-detail highlight"><strong>Modelo:</strong> {{ sesion.modelo }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

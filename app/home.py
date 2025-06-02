@@ -24,8 +24,36 @@ async def read_info(request:Request):
     sesiones = pd.read_csv(csv_file)
     sesiones["id"] = sesiones.index
     lista = sesiones.to_dict(orient="records")
-    return templates.TemplateResponse("info.html",{"request":request, "sesiones":lista, "titulo":"Datos en tabla"})
+    return templates.TemplateResponse("comparacion.html",{"request":request, "sesiones":lista, "titulo":"Datos en tabla"})
 
+@router.get("/comparacion", response_class=HTMLResponse)
+async def comparacion_componentes(request: Request):
+    # Archivo CSV con los datos de los componentes
+    csv_file = "componentes.csv"
+    
+    # Leer datos del archivo CSV
+    try:
+        componentes = pd.read_csv(csv_file)
+    except FileNotFoundError:
+        return templates.TemplateResponse(
+            "error.html",
+            {"request": request, "error": "El archivo de datos no se encontró.", "titulo": "Error"}
+        )
+
+    # Agregar un ID para facilitar la manipulación
+    componentes["id"] = componentes.index
+
+    # Filtrar solo los dos componentes seleccionados (puedes ajustar este filtro)
+    seleccionados = componentes.head(2)  # Aquí seleccionamos los dos primeros componentes como ejemplo
+    
+    # Convertir a una lista de diccionarios
+    lista_componentes = seleccionados.to_dict(orient="records")
+
+    # Renderizar la plantilla con los datos
+    return templates.TemplateResponse(
+        "comparacion.html",
+        {"request": request, "sesiones": lista_componentes, "titulo": "Comparación de Componentes"}
+    )
 
 @router.get("/add", response_class=HTMLResponse)
 async def show_form(request:Request):

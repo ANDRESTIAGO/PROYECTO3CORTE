@@ -1,10 +1,11 @@
-nombre,tipo,marca,modelo
-procesador,CPU,AMD,Ryzen 5 5600X
-corsair,GPU,NVIDIA,RTX 3060
-tarjeta gráfica,GPU,AMD,RX 6600 XT
-memoria,ram,corsair,Vengeance LPX 28GB
-samsung,ram,kingston,Fury Beast 16GB
-almacenamiento,SSD,Samsung,980 1TB
-almacenamiento,HDD,Seagate,Barracuda 2TB
-placa madre,Motherboard,ASUS,Prime B550M-A
-placa madre,Motherboard,MSI,B450 Tomahawk Max
+,nombre,tipo,marca,modelo
+0,procesador,CPU,AMD,Ryzen 5 5600X
+1,corsair,GPU,NVIDIA,RTX 3060
+2,tarjeta gráfica,GPU,AMD,RX 6600 XT
+3,memoria,ram,corsair,Vengeance LPX 28GB
+4,samsung,ram,kingston,Fury Beast 16GB
+5,almacenamiento,SSD,Samsung,980 1TB
+6,almacenamiento,HDD,Seagate,Barracuda 2TB
+7,placa madre,Motherboard,ASUS,Prime B550M-A
+8,placa madre,Motherboard,MSI,B450 Tomahawk Max
+9,ryzen,procesador,ryzen,hola
