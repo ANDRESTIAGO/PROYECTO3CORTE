@@ -63,6 +63,7 @@ button {
     box-shadow: 2px 2px black;
     color: aliceblue;
     background-color: #ab7633;
+    font-family: 'Consul', sans-serif;
 }
 
 button:hover {
@@ -170,6 +171,23 @@ header a:hover {
     margin: 20px;
     border-radius: 15px;
     flex: 1 1 300px
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente si el contenedor tiene altura */
+}
+.seleccionar {
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 2.5px;
+    border: 1px solid black;
+    box-shadow: 2px 2px rgb(51, 50, 50);
+    color: aliceblue;
+    background-color: #ab7633;
+    font-family: 'Consul', sans-serif;
 }
 
 .carta:first-child {

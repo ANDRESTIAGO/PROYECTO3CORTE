@@ -50,12 +50,16 @@
                         {% endif %}
                     </div>
                     <label>
+                    <div class="seleccionar">
                         <input type="checkbox" name="seleccionados" value="{{ componente.id }}"> Seleccionar
+                    </div>
                     </label>
                 </div>
             {% endfor %}
         </div>
+        <div class="contenedor-botones">
         <button type="submit" class="btn">Comparar</button>
+        </div>
     </form>
 </section>
 {% endblock %}
