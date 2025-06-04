@@ -321,4 +321,28 @@ async def ver_ordenes(request: Request):
         {"request": request, "ordenes": ordenes_agrupadas}
     )
 
+@router.get("/eliminar", response_class=HTMLResponse)
+async def mostrar_ordenes_para_eliminar(request: Request):
+    try:
+        df = pd.read_csv("orden.csv")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="No hay órdenes registradas")
 
+    nombres_ordenes = df["orden"].unique().tolist()
+
+    return templates.TemplateResponse("eliminar.html", {
+        "request": request,
+        "ordenes": nombres_ordenes
+    })
+
+
+@router.post("/eliminar", response_class=HTMLResponse)
+async def eliminar_orden_completa(orden: str = Form(...)):
+    try:
+        df = pd.read_csv("orden.csv")
+        df = df[df["orden"] != orden]
+        df.to_csv("orden.csv", index=False)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="No hay órdenes para eliminar")
+
+    return RedirectResponse(url="/ordenes", status_code=303)
