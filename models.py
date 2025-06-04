@@ -41,3 +41,10 @@ class ComponenteActualizado(SQLModel):
 class DistriActualizado(SQLModel):
     nombre: Optional[str] = Field(None, min_length=2, max_length=50)
     direccion: Optional[str] = Field(None, min_length=2, max_length=30)
+    
+class Orden(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    componente_id: int
+    componente_nombre: str
+    componente_tipo: str
+    componente_marca: str

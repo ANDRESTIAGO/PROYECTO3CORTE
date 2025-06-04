@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="hero">
+  <div class="hero">
+    <h1 href>Fast Components</h1>
+    <h1>{{title}}</h1>
+  </div>
+</section>
+
+<section id="Lo-que-ofresemos">
+        <div class="contenedor">
+            <div class="texto">
+<h2>Orden de Compra</h2>
+        <div class="contenedor-botones">
+            <form action="/add">
+                <button>Crear orden de compra</button>
+            </form>
+        </div>
+        <div class="contenedor-botones">
+            <form action="/update">
+                <button>Editar orden de compra</button>
+            </form>
+        </div>
+        <div class="contenedor-botones">
+            <form action="/ordenes">
+                <button>Mostrar orden de compra</button>
+            </form>
+        </div>
+        <div class="contenedor-botones">
+            <form action="/delete">
+                <button>Eliminar orden de compra</button>
+            </form>
+        </div>
+        </div>
+     </div>
+</section>
+{% endblock %}
