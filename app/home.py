@@ -234,32 +234,52 @@ async def submit_info(
 
     return RedirectResponse(url="/orden", status_code=303)
 
-
-
-
-@router.put("/update/{id}")
-async def actulizar_componente(
-        id: int,
-        nombre: Optional[str] = Form(None),
-        tipo: Optional[str] = Form(None),
-        marca: Optional[str] = Form(None),
-        modelo: Optional[str] = Form(None)
-):
+@router.get("/modificar", response_class=HTMLResponse)
+async def modificar_orden(request: Request):
     try:
-        df = pd.read_csv(csv_file)
-        if id < 0 or id >= len(df):
-            raise HTTPException(status_code=404, detail="Componente no encontrado")
+        df_orden = pd.read_csv("orden.csv")
+        df_componentes = pd.read_csv("componentes.csv")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="No se encontraron archivos de orden o componentes")
 
-        if nombre: df.at[id, "nombre"] = nombre
-        if tipo: df.at[id, "tipo"] = tipo
-        if marca: df.at[id, "marca"] = marca
-        if modelo: df.at[id, "modelo"] = modelo
+    ordenes = df_orden["orden"].unique().tolist()
+    componentes_por_orden = {
+        nombre: df_orden[df_orden["orden"] == nombre].to_dict(orient="records")
+        for nombre in ordenes
+    }
 
-        df.to_csv(csv_file, index=False)
+    return templates.TemplateResponse("modificar_orden.html", {
+        "request": request,
+        "ordenes": ordenes,
+        "componentes_por_orden": componentes_por_orden,
+        "todos_componentes": df_componentes.to_dict(orient="records")
+    })
 
-        return {"message": "Componente actualizado exitosamente"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error actualizando componente: {e}")
+@router.post("/modificar", response_class=HTMLResponse)
+async def aplicar_modificacion(
+    orden: str = Form(...),
+    componente_id_original: int = Form(...),
+    nuevo_id: int = Form(...)
+):
+    df_orden = pd.read_csv("orden.csv")
+    df_componentes = pd.read_csv("componentes.csv")
+
+    nuevo = df_componentes[df_componentes["id"] == nuevo_id]
+    if nuevo.empty:
+        raise HTTPException(status_code=404, detail="Nuevo componente no encontrado")
+
+    index = df_orden[(df_orden["orden"] == orden) & (df_orden["id"] == componente_id_original)].index
+    if index.empty:
+        raise HTTPException(status_code=404, detail="Componente original no encontrado en la orden")
+
+    for col in nuevo.columns:
+        df_orden.loc[index, col] = nuevo.iloc[0][col]
+
+    df_orden.to_csv("orden.csv", index=False)
+    return RedirectResponse(url="/ordenes", status_code=303)
+
+
+
 
 @router.delete("/delete/{id}")
 async def eliminar_componente(id: int):
@@ -300,3 +320,5 @@ async def ver_ordenes(request: Request):
         "orden.html",
         {"request": request, "ordenes": ordenes_agrupadas}
     )
+
+

@@ -2,7 +2,12 @@
 {% block title %}{{ titulo }}{% endblock %}
 
 {% block content %}
-<section id="selected-components">
+<section id="hero">
+    <div class="hero">
+        <h1 class="hero-title">Comparacion entre componentes</h1>
+        <h3 class="hero-subtitle">Aquí compararás dos componentes que tu elijas</h3>
+    </div>
+</section>
     <div class="cards-container">
         {% for componente in sesiones %}
         <div class="card">
@@ -47,5 +52,5 @@
             <a href="/comparacion" class="btn"><button type="submit" class="btn">Volver</button></a>
         </div>
     
-</section>
+
 {% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Modificar una orden existente</h2>
+
+<section id="Lo-que-ofresemos">
+    <div class="contenedor">
+    <form method="post" action="/modificar">
+        <label>Selecciona la orden:</label>
+        <select name="orden" id="orden" onchange="mostrarComponentes()" required>
+            <option value="">--Seleccionar--</option>
+            {% for nombre in ordenes %}
+                <option value="{{ nombre }}">{{ nombre }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+        <label>Selecciona el componente que deseas reemplazar:</label>
+        <select name="componente_id_original" id="componente" required>
+            <option value="">--Selecciona una orden primero--</option>
+        </select>
+
+        <br><br>
+        <label>Selecciona el nuevo componente:</label>
+        <select name="nuevo_id" required>
+            {% for c in todos_componentes %}
+                <option value="{{ c.id }}">{{ c.tipo }} - {{ c.marca }} {{ c.modelo }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+        <button type="submit">Aplicar cambio</button>
+    </form>
+</div>
+</section>
+<script>
+    const data = {{ componentes_por_orden | tojson }};
+    function mostrarComponentes() {
+        const orden = document.getElementById("orden").value;
+        const select = document.getElementById("componente");
+        select.innerHTML = "";
+
+        if (orden in data) {
+            data[orden].forEach(comp => {
+                const option = document.createElement("option");
+                option.value = comp.id;
+                option.text = comp.tipo + " - " + comp.marca + " " + comp.modelo;
+                select.appendChild(option);
+            });
+        } else {
+            const option = document.createElement("option");
+            option.value = "";
+            option.text = "--No hay componentes--";
+            select.appendChild(option);
+        }
+    }
+</script>
+{% endblock %}

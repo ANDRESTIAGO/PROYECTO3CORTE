@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="hero">
+    <div class="hero">
+        <h1 class="hero-title">Comparacion entre componentes</h1>
+        <h3 class="hero-subtitle">Aquí compararás dos componentes que tu elijas</h3>
+    </div>
+</section>
+<h2>Eliminar una orden completa</h2>
+
+<form method="post" action="eliminar">
+    <label>Selecciona la orden que deseas eliminar:</label>
+    <select name="orden" required>
+        {% for nombre in ordenes %}
+            <option value="{{ nombre }}">{{ nombre }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta orden completa?')">
+        Eliminar orden
+    </button>
+</form>
+
+<a href="/menu">← Volver al menú</a>
+{% endblock %}
