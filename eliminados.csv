@@ -4,3 +4,23 @@ id,nombre,tipo,marca,modelo,socket,nucleos,frecuencia_base,vram,tipo_memoria,pue
 5.0,Memoria RAM Corsair,RAM,Corsair,Vengeance LPX 16GB,,,,,,,16.0,3200.0,DDR4,,,,,,https://m.media-amazon.com/images/I/51O4bhCyg2L._AC_SL1000_.jpg,orden1
 3.0,Tarjeta Gráfica RTX 3060,GPU,NVIDIA,RTX 3060,,,,12.0,GDDR6,"HDMI, DisplayPort",,,,,,,,,https://pcmastersbogota.com.co/wp-content/uploads/2023/05/imagen_2023-05-16_100352851.png,orden1
 9.0,Disco Duro,HDD,Seagate,Barracuda 2TB,,,,,,,2000.0,,,,SATA,,,,https://globalsarpi.com/wp-content/uploads/2024/02/HDD-Interno-Seagate-Barracuda-2TB-3.5-7200RPM-256MB-ST2000DM008-1.jpg,orden1
+7.0,Placa Madre ASUS,Motherboard,ASUS,ROG STRIX B550-F,AM4,,,,,,,,DDR4,4.0,,,,,https://m.media-amazon.com/images/I/81Q-hxowAqL.jpg,orden2
+1.0,Procesador Ryzen 5,CPU,AMD,Ryzen 5 5600X,AM4,6.0,3.7,,,,,,,,,,,,https://compugamercol.com/wp-content/uploads/2022/08/amd-ryzen-5-5600x-review.jpg,orden2
+5.0,Memoria RAM Corsair,RAM,Corsair,Vengeance LPX 16GB,,,,,,,16.0,3200.0,DDR4,,,,,,https://m.media-amazon.com/images/I/51O4bhCyg2L._AC_SL1000_.jpg,orden2
+3.0,Tarjeta Gráfica RTX 3060,GPU,NVIDIA,RTX 3060,,,,12.0,GDDR6,"HDMI, DisplayPort",,,,,,,,,https://pcmastersbogota.com.co/wp-content/uploads/2023/05/imagen_2023-05-16_100352851.png,orden2
+9.0,Disco Duro,HDD,Seagate,Barracuda 2TB,,,,,,,2000.0,,,,SATA,,,,https://globalsarpi.com/wp-content/uploads/2024/02/HDD-Interno-Seagate-Barracuda-2TB-3.5-7200RPM-256MB-ST2000DM008-1.jpg,orden2
+7.0,Placa Madre ASUS,Motherboard,ASUS,ROG STRIX B550-F,AM4,,,,,,,,DDR4,4.0,,,,,https://m.media-amazon.com/images/I/81Q-hxowAqL.jpg,orden1
+1.0,Procesador Ryzen 5,CPU,AMD,Ryzen 5 5600X,AM4,6.0,3.7,,,,,,,,,,,,https://compugamercol.com/wp-content/uploads/2022/08/amd-ryzen-5-5600x-review.jpg,orden1
+5.0,Memoria RAM Corsair,RAM,Corsair,Vengeance LPX 16GB,,,,,,,16.0,3200.0,DDR4,,,,,,https://m.media-amazon.com/images/I/51O4bhCyg2L._AC_SL1000_.jpg,orden1
+3.0,Tarjeta Gráfica RTX 3060,GPU,NVIDIA,RTX 3060,,,,12.0,GDDR6,"HDMI, DisplayPort",,,,,,,,,https://pcmastersbogota.com.co/wp-content/uploads/2023/05/imagen_2023-05-16_100352851.png,orden1
+10.0,Disco Duro,SSD,Samsung,970 EVO 1TB,,,,,,,1000.0,,,,NVMe,,,,https://m.media-amazon.com/images/I/71OYNmVRFhL.jpg,orden1
+15.0,Placa Madre ASUS,Motherboard,ASUS,PRIME H610M-E D4,LGA1700,,,,,,,,DDR4,4.0,,,,,https://pcspeed.com.pe/wp-content/uploads/2023/03/mainboard-asus-prime-h610m-e-d4-90mb19n0-m0eay0-2.jpg,orden2
+2.0,Procesador Core i7,CPU,Intel,i7-12700K,LGA1700,12.0,3.6,,,,,,,,,,,,https://www.mrpc.com.co/wp-content/uploads/2023/07/001-36.jpg,orden2
+5.0,Memoria RAM Corsair,RAM,Corsair,Vengeance LPX 16GB,,,,,,,16.0,3200.0,DDR4,,,,,,https://m.media-amazon.com/images/I/51O4bhCyg2L._AC_SL1000_.jpg,orden2
+3.0,Tarjeta Gráfica RTX 3060,GPU,NVIDIA,RTX 3060,,,,12.0,GDDR6,"HDMI, DisplayPort",,,,,,,,,https://pcmastersbogota.com.co/wp-content/uploads/2023/05/imagen_2023-05-16_100352851.png,orden2
+9.0,Disco Duro,HDD,Seagate,Barracuda 2TB,,,,,,,2000.0,,,,SATA,,,,https://globalsarpi.com/wp-content/uploads/2024/02/HDD-Interno-Seagate-Barracuda-2TB-3.5-7200RPM-256MB-ST2000DM008-1.jpg,orden2
+7.0,Placa Madre ASUS,Motherboard,ASUS,ROG STRIX B550-F,AM4,,,,,,,,DDR4,4.0,,,,,https://m.media-amazon.com/images/I/81Q-hxowAqL.jpg,orden1
+2.0,Procesador Core i7,CPU,Intel,i7-12700K,LGA1700,12.0,3.6,,,,,,,,,,,,https://www.mrpc.com.co/wp-content/uploads/2023/07/001-36.jpg,orden1
+5.0,Memoria RAM Corsair,RAM,Corsair,Vengeance LPX 16GB,,,,,,,16.0,3200.0,DDR4,,,,,,https://m.media-amazon.com/images/I/51O4bhCyg2L._AC_SL1000_.jpg,orden1
+3.0,Tarjeta Gráfica RTX 3060,GPU,NVIDIA,RTX 3060,,,,12.0,GDDR6,"HDMI, DisplayPort",,,,,,,,,https://pcmastersbogota.com.co/wp-content/uploads/2023/05/imagen_2023-05-16_100352851.png,orden1
+9.0,Disco Duro,HDD,Seagate,Barracuda 2TB,,,,,,,2000.0,,,,SATA,,,,https://globalsarpi.com/wp-content/uploads/2024/02/HDD-Interno-Seagate-Barracuda-2TB-3.5-7200RPM-256MB-ST2000DM008-1.jpg,orden1
