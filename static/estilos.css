@@ -176,8 +176,8 @@ header a:hover {
 
 .contenedor-botones {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente si el contenedor tiene altura */
+    justify-content: center;
+    align-items: center;
 }
 .seleccionar {
     padding: 6px 12px;

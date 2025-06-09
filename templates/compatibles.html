@@ -28,20 +28,17 @@
 </form>
 {% endfor %}
 
-<!-- Botón Siguiente -->
 <form method="post" action="/orden">
   <button type="submit" class="btn">Siguiente</button>
 </form>
 
 <script>
-  // Capturar eventos de clic en los botones de cada formulario
   document.querySelectorAll('.componente-form button').forEach(button => {
     button.addEventListener('click', async (event) => {
-      event.preventDefault(); // Evitar recarga de la página
-      const tipo = button.dataset.tipo; // Obtener tipo de componente
-      const id = button.value; // Obtener ID del componente
+      event.preventDefault(); 
+      const tipo = button.dataset.tipo; 
+      const id = button.value;
 
-      // Enviar datos al servidor
       try {
         const response = await fetch('/orden/agregar', {
           method: 'POST',
