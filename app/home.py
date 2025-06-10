@@ -12,17 +12,17 @@ csv_file = "componentes.csv"
 prueba_file = "pruebas.csv"
 
 @router.get("/home", response_class=HTMLResponse)
-async def read_home(request: Request):
+async def ver_home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 
 @router.get("/", response_class=HTMLResponse)
-async def read_home(request: Request):
+async def ver_home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 
 @router.get("/info", response_class=HTMLResponse)
-async def read_info(request:Request):
+async def leer_info(request:Request):
     csv_file = "componentes.csv"
     sesiones = pd.read_csv(csv_file)
     sesiones["id"] = sesiones.index
@@ -55,7 +55,7 @@ async def comparar_componentes(request: Request, seleccionados: list[int] = Form
     )
 
 @router.get("/compatiblesi", response_class=HTMLResponse)
-async def get_compatible_components(request: Request, socket: str, tipo_ram: Optional[str] = None):
+async def get_componentes_compatibles(request: Request, socket: str, tipo_ram: Optional[str] = None):
     csv_file = "componentes.csv"
     df = pd.read_csv(csv_file)
 
@@ -90,7 +90,7 @@ async def ver_orden(request: Request):
     )
 #-----------------------------------------------------------------------------------------------------
 @router.get("/add", response_class=HTMLResponse)
-async def show_form(request: Request):
+async def ver_add(request: Request):
     df = pd.read_csv("componentes.csv")
 
     motherboards = df[df["tipo"] == "Motherboard"].to_dict(orient="records")
@@ -111,7 +111,7 @@ async def show_form(request: Request):
 
 
 @router.post("/add")
-async def submit_info(
+async def enviar_add(
     nombre_orden: str = Form(...),
     motherboard_id: int = Form(...),
     cpu_id: int = Form(...),
@@ -153,7 +153,7 @@ async def submit_info(
     return RedirectResponse(url="/orden", status_code=303)
 
 @router.get("/modificar", response_class=HTMLResponse)
-async def modificar_orden(request: Request):
+async def ver_modificar_orden(request: Request):
     try:
         df_orden = pd.read_csv("orden.csv")
         df_componentes = pd.read_csv("componentes.csv")
@@ -242,7 +242,7 @@ async def mover_orden_a_eliminados(orden: str = Form(...)):
 
 
 @router.get("/menu", response_class=HTMLResponse)
-async def read_home(request: Request):
+async def ver_menu(request: Request):
     return templates.TemplateResponse("menu.html", {"request": request})
 
 @router.get("/ordenes", response_class=HTMLResponse)
