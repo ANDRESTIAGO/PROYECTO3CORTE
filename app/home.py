@@ -4,7 +4,7 @@ from fastapi.templating import Jinja2Templates
 import pandas as pd
 import pandas.errors
 import numpy as np
-from models import Componente, ComponenteActualizado, ComponenteConId, DistriActualizado, Distribuidores, DistriConId, Sesion, Orden
+from models import Componente, ComponenteActualizado, ComponenteConId, Orden
 from typing import Optional
 templates = Jinja2Templates(directory="templates")
 router = APIRouter()
