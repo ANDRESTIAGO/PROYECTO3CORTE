@@ -271,6 +271,19 @@ header a:hover {
         rgba(0, 0, 0, 0.5)
     ), url("../static/img/cartac4.png");
 }
+
+.orden {
+    background-position: center center;
+    background-size: cover;
+    padding: 25px;
+    margin: 50px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    background-color: #fff;
+    h2 {
+        color: black;
+    }
+}
 #lo-mostrado {
     background-color: rgb(30, 30, 30);
     color: white;
