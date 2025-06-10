@@ -128,10 +128,10 @@ async def enviar_add(
     disco = df[df["id"] == disco_id].iloc[0]
 
     if cpu["socket"] != mb["socket"]:
-        raise HTTPException(status_code=400, detail="El CPU no es compatible con el socket de la motherboard.")
+        return RedirectResponse(url="/cpu-incompa", status_code=303)
 
     if "tipo_ram" in mb and "tipo_ram" in ram and ram["tipo_ram"] != mb["tipo_ram"]:
-        raise HTTPException(status_code=400, detail="La RAM no es compatible con la motherboard.")
+        return RedirectResponse(url="/ram-incompa", status_code=303)
 
     try:
         orden = pd.read_csv(orden_file)
@@ -150,6 +150,14 @@ async def enviar_add(
     orden.to_csv(orden_file, index=False)
 
     return RedirectResponse(url="/orden", status_code=303)
+
+@router.get("/cpu-incompa", response_class=HTMLResponse)
+async def ver_cpu_incompa(request: Request):
+    return templates.TemplateResponse("cpu-incompa.html", {"request": request})
+
+@router.get("/ram-incompa", response_class=HTMLResponse)
+async def ver_ram_incompa(request: Request):
+    return templates.TemplateResponse("ram-incompa.html", {"request": request})
 
 @router.get("/modificar", response_class=HTMLResponse)
 async def ver_modificar_orden(request: Request):
