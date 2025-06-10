@@ -104,6 +104,13 @@ header nav {
     padding-bottom: 25px;
     font-family: 'Consul', sans-serif;
 }
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+    font-family: 'Consul', sans-serif;
+}
 header a {
     padding: 5px 12px;
     text-decoration: none;
@@ -211,6 +218,58 @@ header a:hover {
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
     ), url("../static/img/listado.jpg");
+}
+.cartac1{
+    background-position: center center;
+    background-size: cover;
+    padding: 45px;
+    margin: 20px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("../static/img/cartac1.png");
+}
+.cartac2{
+    background-position: center center;
+    background-size: cover;
+    padding: 45px;
+    margin: 20px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("../static/img/cartac2.png");
+}
+.cartac3 {
+    background-position: center center;
+    background-size: cover;
+    padding: 45px;
+    margin: 20px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("../static/img/cartac3.png");
+}
+.cartac4 {
+    background-position: center center;
+    background-size: cover;
+    padding: 45px;
+    margin: 20px;
+    border-radius: 15px;
+    flex: 1 1 300px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("../static/img/cartac4.png");
 }
 #lo-mostrado {
     background-color: rgb(30, 30, 30);
@@ -332,6 +391,43 @@ footer .contenedor {
     }
     footer .contenedor {
         justify-content: flex-end;
+    }
+}
+.footer {
+    background: #79521f;
+    color: white;
+    padding: 2rem;
+    color: aliceblue;
+    font-family: 'Consul', sans-serif;
+    align-items: center;
+    font-size: 1em;
+    font-family: 'TheExtended', sans-serif;
+    
+    text-align: center;
+    p {
+        color: white;
+    }
+}
+.form_forma{
+    input {
+        height: 20px;
+        width: 263px;
+    }
+    select {
+        height: 20px;
+        width: 263px;
+    }
+    button {
+        text-align: center;
+        justify-content: center;
+        width: 263px;
+    }
+    label {
+        height: 20px;
+        width: 263px;
+    }
+    form{
+        text-align: center;
     }
 }
 

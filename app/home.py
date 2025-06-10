@@ -20,7 +20,6 @@ async def ver_home(request: Request):
 async def ver_home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
-
 @router.get("/info", response_class=HTMLResponse)
 async def leer_info(request:Request):
     csv_file = "componentes.csv"
@@ -55,7 +54,7 @@ async def comparar_componentes(request: Request, seleccionados: list[int] = Form
     )
 
 @router.get("/compatiblesi", response_class=HTMLResponse)
-async def get_componentes_compatibles(request: Request, socket: str, tipo_ram: Optional[str] = None):
+async def ver_componentes_compatibles(request: Request, socket: str, tipo_ram: Optional[str] = None):
     csv_file = "componentes.csv"
     df = pd.read_csv(csv_file)
 

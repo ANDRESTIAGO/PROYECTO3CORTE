@@ -17,14 +17,20 @@
             </ul>
         </div>
     {% endfor %}
-        <form action="/menu">
+        <form action="/menu#Como-ayudar">
             <button>Regresar</button>
         </form>
 {% else %}
 <section id="Lo-que-ofresemos">
   <div class="contenedor">
-    <p>No hay órdenes registradas.</p>
+    <p>No hay ordenes registradas.</p>
   </div>
 </section>
+    <div class="form_forma">
+        <form action="/menu#Como-ayudar">
+            <button>Regresar</button>
+        </form>
+    </div>
 {% endif %}
+
 {% endblock %}
