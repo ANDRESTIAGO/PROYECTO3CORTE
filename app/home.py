@@ -10,6 +10,7 @@ templates = Jinja2Templates(directory="templates")
 router = APIRouter()
 csv_file = "componentes.csv"
 prueba_file = "pruebas.csv"
+csv_eliminados = "eliminados.csv"
 
 @router.get("/home", response_class=HTMLResponse)
 async def ver_home(request: Request):
@@ -27,6 +28,27 @@ async def leer_info(request:Request):
     sesiones["id"] = sesiones.index
     lista = sesiones.to_dict(orient="records")
     return templates.TemplateResponse("info.html",{"request":request, "sesiones":lista, "titulo":"Datos en tabla"})
+
+@router.get("/ver_eliminados", response_class=HTMLResponse)
+async def ver_eliminados(request: Request):
+    orden_file = "eliminados.csv"
+
+    try:
+        df = pd.read_csv(orden_file)
+    except FileNotFoundError:
+        df = pd.DataFrame(columns=["orden", "id", "nombre", "tipo", "marca", "modelo"])
+
+    ordenes_agrupadas = {}
+    for _, row in df.iterrows():
+        nombre_orden = row["orden"]
+        if nombre_orden not in ordenes_agrupadas:
+            ordenes_agrupadas[nombre_orden] = []
+        ordenes_agrupadas[nombre_orden].append(row.to_dict())
+
+    return templates.TemplateResponse(
+        "ver_eliminados.html",
+        {"request": request, "ordenes": ordenes_agrupadas}
+    )
 
 @router.get("/comparacion", response_class=HTMLResponse)
 async def mostrar_componentes(request: Request):
